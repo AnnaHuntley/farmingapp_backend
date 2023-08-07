@@ -1,0 +1,11 @@
+<h1><%= @crop.name %></h1>
+
+<p><%= @crop.description %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_crop_path(@crop) %></li>
+  <li><%= link_to "Destroy", crop_path(@crop), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>

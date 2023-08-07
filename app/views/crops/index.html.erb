@@ -1,0 +1,29 @@
+<h1>All Crops</h1>
+
+<!-- Table to display crops -->
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Quantity</th>
+    <th>Actions</th>
+  </tr>
+  <!-- Loop through each crop and display its details -->
+  <% @crops.each do |crop| %>
+    <tr>
+      <!-- Display crop attributes in respective columns -->
+      <td><%= crop.name %></td>
+      <td><%= crop.description %></td>
+      <td><%= crop.quantity %></td>
+      <td>
+        <!-- Links for various actions -->
+        <%= link_to 'Show', crop %>
+        <%= link_to 'Edit', edit_crop_path(crop) %>
+        <%= link_to 'Destroy', crop, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<!-- Link to create a new crop -->
+<%= link_to 'New Crop', new_crop_path %>
