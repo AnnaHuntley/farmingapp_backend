@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  #  define routes for the crops
+  # Define routes for the crops
   resources :crops
   root to: 'crops#index'
-  
+
+  # Add route to handle OPTIONS requests
+  match '*path', to: 'application#handle_options_request', via: :options
 end
