@@ -22,7 +22,7 @@ module FarmingApp
     # Allow requests from the React app running on localhost:3000
     
     config.action_dispatch.default_headers = {
-      'Access-Control-Allow-Origin' => '*',
+      'Access-Control-Allow-Origin' => 'http://52.188.64.135:5000',
       'Access-Control-Allow-Methods' => 'POST, PUT, PATCH, DELETE, GET, OPTIONS',
       'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
       'Access-Control-Allow-Credentials' => 'true'
