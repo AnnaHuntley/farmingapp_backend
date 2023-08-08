@@ -19,7 +19,7 @@ module FarmingApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Allow requests from the React app running on localhost:3000
+    # Allow requests from the React app 
     
     config.action_dispatch.default_headers = {
       'Access-Control-Allow-Origin' => 'http://52.188.64.135:5000',
@@ -27,11 +27,11 @@ module FarmingApp
       'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
       'Access-Control-Allow-Credentials' => 'true'
     }
-
+    
     
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://52.188.64.135:5000/'
+        origins 'http://52.188.64.135:5000'
         resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options]
       end
     end
