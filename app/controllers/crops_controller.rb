@@ -22,10 +22,10 @@ class CropsController < ApplicationController
     @crop = Crop.new
   end
 
-  def create  # Attempts to save a new crop. If successful, redirects to the crop's page and responds with JSON. If unsuccessful, renders the "new" form with errors and responds with JSON containing errors
+  def create # Attempts to save a new crop. If successful, redirects to the crop's page and responds with JSON. If unsuccessful, renders the "new" form with errors and responds with JSON containing errors
     @crop = Crop.new(crop_params)
-
-    if @crop.save  # saves changes to a ecord in the database
+  
+    if @crop.save # saves changes to a ecord in the database
       respond_to do |format|
         format.html { redirect_to @crop }
         format.json { render json: @crop, status: :created }
@@ -37,6 +37,7 @@ class CropsController < ApplicationController
       end
     end
   end
+  
 
   def edit # Retrieves a crop for editing
     @crop = Crop.find(params[:id])
