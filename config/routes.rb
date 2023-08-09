@@ -7,7 +7,4 @@ Rails.application.routes.draw do
   # Define routes for the crops
   resources :crops
   root to: 'crops#index'
-
-  # Add route to handle OPTIONS requests
-  match '*path', to: 'application#handle_options_request', via: :options
 end
