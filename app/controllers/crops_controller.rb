@@ -1,5 +1,5 @@
 class CropsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+ 
   def index   #Fetches all crops from the database  
     @crops = Crop.all
 
